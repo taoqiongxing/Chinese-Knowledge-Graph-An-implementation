@@ -16,7 +16,6 @@ class HtmlParser(object):
             #result=re.findall('/item/*', result)
             # print(result)
             item=result#[0]#.replace('/[0-9]+','').split('/')[2].replace('#hotspotmining','')
-            print(item)
             sets.add(urljoin('https://baike.baidu.com/item/%E4%B8%8A%E6%B5%B7%E5%A4%A7%E5%AD%A6',item))
             # print(urllib.parse.unquote(urljoin('https://baike.baidu.com', '/'.join(temp.find('a')['href'].split('/')[:5]))) )
             # maps[temp.find('a').contents[0]]=urllib.parse.unquote(urljoin('https://baike.baidu.com', '/'.join(temp.find('a')['href'].split('/')))) 
@@ -38,6 +37,5 @@ class HtmlParser(object):
             return
         soup = BeautifulSoup((html_cont), 'lxml')
         sets = self._get_new_urls( soup)
-        # print(sets)
         is_saved = self._save_new_data(soup,html_cont)
         return sets, is_saved

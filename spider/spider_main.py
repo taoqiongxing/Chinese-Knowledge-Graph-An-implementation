@@ -12,14 +12,12 @@ class MyThread(threading.Thread):
         threading.Thread.__init__(self)
         self._running = True
         self.name=name
-        print(self.name)
     def terminate(self):
         self._running = False
     def run(self):
        # try:
         pages=0
         spendtime=0.
-        print(urls.has_new_url())
         outout=0
         while urls.has_new_url() and self._running and outout<2:
             outout+=1
@@ -32,7 +30,6 @@ class MyThread(threading.Thread):
                 html_cont = downloader.download(new_url)
                 new_urls,_  = parser.parse(html_cont)
                 LOCK.acquire()
-                print(len(new_urls))
                 urls.add_new_urls(new_urls)
                 LOCK.release()
                 pages+=1
