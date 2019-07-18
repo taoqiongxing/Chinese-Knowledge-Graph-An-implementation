@@ -3,4 +3,4 @@
 
 主要是修改了某几处在windows上运行出错的地方
 
-https://github.com/taoqiongxing/Chinese-Knowledge-Graph-An-implementation/blob/master/graph.png
+![image](https://github.com/taoqiongxing/Chinese-Knowledge-Graph-An-implementation/blob/master/graph.png)
